@@ -1,0 +1,52 @@
+/* 
+active 1 02 ~ 06 #0c0075, #0b1025
+active 2 06 ~ 10 #1f58b6, #061737
+active 3 10 ~ 14 #fab543, #6d3d03
+active 4 14 ~ 18 #fa8c43, #242b10
+active 5 18 ~ 22 #93ae36, #102b25
+active 6 22 ~ 02 #20779c, #1f062d
+*/
+
+/********************** Global *********************/
+.stage-wrapper {position: relative; width: 100%; min-height: 100vh;}
+.stage-wrapper.active1 {background-image: linear-gradient(#0c0075, #0b1025);}
+.stage-wrapper.active2 {background-image: linear-gradient(#1f58b6, #6e3608);}
+.stage-wrapper.active3 {background-image: linear-gradient(#ffcb78, #ad4b0a);}
+.stage-wrapper.active4 {background-image: linear-gradient(#fa8c43, #242b10);}
+.stage-wrapper.active5 {background-image: linear-gradient(#3688ae, #102b25);}
+.stage-wrapper.active6 {background-image: linear-gradient(#0a2f69, #220433);}
+.wrapper {}
+
+
+/********************** Header *********************/
+
+
+
+/********************** Map *********************/
+
+
+
+/********************** Weather *********************/
+
+
+
+/********************** 반응형 설정 *********************/
+@media (max-width: 1399px) {
+	
+}
+
+@media (max-width: 1199px) {
+	
+}
+
+@media (max-width: 991px) {
+	
+}
+
+@media (max-width: 767px) {
+	
+}
+
+@media (max-width: 575px) {
+	
+}
