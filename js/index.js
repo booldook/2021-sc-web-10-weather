@@ -27,6 +27,7 @@ $(function() {
 
 	/*************** 사용자 함수 *****************/
 	initBg();
+	initMap();
 
 
 	function initBg() {
@@ -41,6 +42,19 @@ $(function() {
 
 		for(var i=1; i<=6; i++) $bgWrapper.removeClass('active'+i);
 		$bgWrapper.addClass('active'+timeDivision);
+	}
+
+	function initMap() {
+		var container = document.getElementById('map');
+		var options = {
+			center: new kakao.maps.LatLng(36.239934, 127.555918),
+			level: 13,
+			draggable: false,
+			zoomable: false,
+		};
+
+		var map = new kakao.maps.Map(container, options);
+		map.addOverlayMapTypeId(kakao.maps.MapTypeId.TERRAIN);
 	}
 
 

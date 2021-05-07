@@ -53,7 +53,8 @@ html, body {font-family: 'Sunflower', sans-serif; font-size: 16px; line-height: 
 
 
 /********************** Map *********************/
-.map-wrapper {width: 49%; height: 100%; border: 1px solid yellowgreen;}
+.map-wrapper {width: 49%; height: 100%; }
+.map-wrapper #map {height: 90%; border: 1px solid yellowgreen; }
 
 
 
