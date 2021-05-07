@@ -34,7 +34,7 @@ $(function() {
 
 
 	function initBg() {
-		var d = new Date('2021-05-07 03:33:33');
+		var d = new Date();
 		time = d.getHours();
 		timeDivision = 
 		(time >= 2 	&& time < 6	) ? 1 : 
