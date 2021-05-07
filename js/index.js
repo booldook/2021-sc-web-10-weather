@@ -7,8 +7,10 @@ kAKAO: 46ad6c8773cc6a28980b95e7eb75f88e
 $(function() {
 
 	/*************** 글로벌 설정 *****************/
+	var map;	// kakao 지도 객체
 	var time;
 	var timeDivision;
+	var mapCenter = { lat: 35.80, lon: 127.55 }
 	var weatherIcon = {
 		i01: 'bi-brightness-high',
 		i02: 'bi-cloud-sun',
@@ -22,6 +24,7 @@ $(function() {
 	}
 
 	var $bgWrapper = $('.bg-wrapper');
+	var $map = $('#map');
 
 
 
@@ -45,24 +48,25 @@ $(function() {
 	}
 
 	function initMap() {
-		var container = document.getElementById('map');
 		var options = {
-			center: new kakao.maps.LatLng(36.239934, 127.555918),
+			center: new kakao.maps.LatLng(mapCenter.lat, mapCenter.lon),
 			level: 13,
 			draggable: false,
 			zoomable: false,
 		};
-
-		var map = new kakao.maps.Map(container, options);
+		map = new kakao.maps.Map($map[0], options);
 		map.addOverlayMapTypeId(kakao.maps.MapTypeId.TERRAIN);
 	}
-
-
-	/*************** 이벤트 등록 *****************/
-
-
-
+	
 	/*************** 이벤트 콜백 *****************/
+	function onResize() {
+		var windowHeight = $(window).innerHeight();
+		var lat = (windowHeight > 800 || windowHeight < 600) ? mapCenter.lat : mapCenter.lat + 1;
+		map.setCenter(new kakao.maps.LatLng(lat, mapCenter.lon));
+		map.setLevel(windowHeight > 800 ? 13 : 14);
+	}
 
-
+	
+	/*************** 이벤트 등록 *****************/
+	$(window).resize(onResize);
 });
