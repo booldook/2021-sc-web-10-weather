@@ -72,10 +72,19 @@
 		order2[i] = v.split('|');	// 배열안에 배열을 넣는다.
 	});
 	console.log(order2);
+
+	/* 배열을 규칙이 있는 문자열로 전환 - join() */
+	var arr = [1, 2, 3, 4, 5];
+	var str = arr.join('*');
+	console.clear();
+	console.log(str);
+
+	// 주문상품 배열 -> 문자열
+	// 숙제(8교시)
 	
 
-	
-	/* 배열의 정렬 - sort() */
+
+	/* 배열의 정렬 - sort(), reverse() */
 	var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 	arr.sort();
 	console.log(arr);
@@ -94,6 +103,8 @@
 	console.log(arr);
 	arr.sort(sortDesc());
 	console.log(arr);
+	arr.reverse();	// 배열을 뒤집는다.
+	console.log(arr);
 
 	var user = [
 		{ id: 1, name: '홍길동', height: 175, weight: 78 },
@@ -105,4 +116,71 @@
 
 	user.sort(sortAsc('weight'));
 	console.log(user);
+
+
+	/* 배열의 반복 */
+	// for(), for(var i in arr) <= 배열의 메서드가 아닌 반복문이다.
+	// forEach(), map(), reduce()
+	var arr = [1, 2, 3, 4, 5];
+	var squared = [];
+	arr.forEach(function(v, i) {
+		squared[i] = v * v;
+	});
+	console.log(squared);
+
+	var arr = [1, 2, 3, 4, 5];
+	squared = arr.map(function(v, i) {
+		return v * v;
+	});
+	console.log(squared); 
+
+	// arr: number[] = arr.reduce(callbackfn: (prevValue: number, currentValue: number, currentIndex: number))
+	var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+	var sum = arr.reduce(function(prev, curr, idx) {
+		return prev + curr
+	});
+	console.log(sum);
+
+	var user = [
+		{ id: 1, name: '홍길동', height: 175, weight: 78 },
+		{ id: 2, name: '홍길만', height: 145, weight: 72 },
+		{ id: 3, name: '홍길이', height: 165, weight: 88 },
+		{ id: 4, name: '홍길순', height: 185, weight: 92 },
+		{ id: 5, name: '홍길룡', height: 195, weight: 68 }
+	];
+	var userSum = user.reduce(function(prev, curr, idx) {
+		curr.name = '총합';
+		curr.height = prev.height + curr.height;
+		curr.weight = prev.weight + curr.weight;
+		return curr;
+	});
+	console.log(userSum);
+
+
+	/* 배열의 필터링 */
+	// filter(): 원하는 값만 추출 => 새로운 배열로 리턴
+	// every(): 모든값이 조건에 맞아야 true 리턴
+	// some(): 하나의 값이라도 조건에 맞으면 true 리턴
+	var user = [
+		{ id: 1, name: '홍길동', height: 175, weight: 78 },
+		{ id: 2, name: '홍길만', height: 145, weight: 72 },
+		{ id: 3, name: '홍길이', height: 165, weight: 88 },
+		{ id: 4, name: '홍길순', height: 185, weight: 92 },
+		{ id: 5, name: '홍길룡', height: 195, weight: 68 }
+	];
+
+	var over170 = user.filter(function(v, i) {
+		return v.height >= 170 ? true : false;
+	});
+	console.log(over170);
+
+	var all170 = user.every(function(v, i) {
+		return v.height >= 170;
+	});
+	console.log(all170);
+
+	var one170 = user.some(function(v, i) {
+		return v.height >= 170;
+	});
+	console.log(one170);
 </script>
