@@ -22,7 +22,7 @@ active 6 22 ~ 02 #20779c, #1f062d
 .bg-wrapper.active6 {background-image: linear-gradient(#0a2f69, #220433);}
 
 .bg-wrap {background-repeat: no-repeat; opacity: .3; background-size: 100% auto; position: absolute; color: #fff;}
-.bg-wrap.bg1 {top: 16px; right: 16px; width: 200px; font-size: 200px; opacity: .5;}
+.bg-wrap.bg1 {top: 16px; right: 16px; width: 200px; font-size: 200px; opacity: .2;}
 .bg-wrap.bg2 {bottom: 80px; left: -120px; width: 250px; font-size: 250px;  opacity: .1;}
 .bg-wrap.bg3 {bottom: -30px; right: 30%; width: 180px; font-size: 180px;  opacity: .05;}
 
