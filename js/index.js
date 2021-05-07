@@ -56,6 +56,7 @@ $(function() {
 		};
 		map = new kakao.maps.Map($map[0], options);
 		map.addOverlayMapTypeId(kakao.maps.MapTypeId.TERRAIN);
+		$(window).resize(onResize).trigger('resize');
 	}
 	
 	/*************** 이벤트 콜백 *****************/
@@ -65,8 +66,7 @@ $(function() {
 		map.setCenter(new kakao.maps.LatLng(lat, mapCenter.lon));
 		map.setLevel(windowHeight > 800 ? 13 : 14);
 	}
-
+	
 	
 	/*************** 이벤트 등록 *****************/
-	$(window).resize(onResize);
 });
