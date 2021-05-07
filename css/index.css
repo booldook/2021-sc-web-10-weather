@@ -33,21 +33,29 @@ html, body {font-family: 'Sunflower', sans-serif; font-size: 16px; line-height: 
 .bg-wrap.bg3 {bottom: -30px; right: 30%; width: 180px; font-size: 180px;  opacity: .05;}
 
 
-.stage-wrapper {position: absolute; z-index: 1; top: 0; left: 0; width: 100%; height: 100%;}
-.wrapper {max-width: 1168px; margin: auto; position: relative;}
+.stage-wrapper {position: absolute; z-index: 1; top: 0; left: 0; width: 100%; height: 100vh;}
+.wrapper {max-width: 1168px; height: 100%; margin: auto; position: relative; display: flex; flex-direction: column;}
 
 
 /********************** Header *********************/
+.header-wrapper {flex-grow: 0;}
 .header-wrapper h1.title {color: #fff; font-size: 4em; font-family: 'Do Hyeon', sans-serif; letter-spacing: -.075em; display: flex; justify-content: center; margin-top: 1em;}
 .header-wrapper h1.title > span {font-family: 'Noto Sans KR', sans-serif; font-size: .875em; margin-top: -.0625em; margin-right: .25em; opacity: .75;}
 .header-wrapper::after {display: block; content: ''; width: 40px; height: 3px; background-color: rgba(255, 255, 255, .5); margin: auto;}
 
 
-/********************** Map *********************/
-
+/********************** container-wrapper *********************/
+.container-wrapper {margin-top: 2em; display: flex; justify-content: space-between; flex-grow: 1;}
 
 
 /********************** Weather *********************/
+.weather-wrapper {width: 49%;}
+
+
+/********************** Map *********************/
+.map-wrapper {width: 49%; height: 100%; border: 1px solid yellowgreen;}
+
+
 
 
 
@@ -65,11 +73,14 @@ html, body {font-family: 'Sunflower', sans-serif; font-size: 16px; line-height: 
 }
 
 @media (max-width: 767px) {
-	.bg-wrap.bg1 {top: 16px; right: 16px; width: 150px; font-size: 150px; opacity: .5;}
-	.bg-wrap.bg2 {bottom: 80px; left: -40px; width: 120px; font-size: 120px;  opacity: .1;}
-	.bg-wrap.bg3 {bottom: -10px; right: 10%; width: 80px; font-size: 80px;  opacity: .05;}
+	.bg-wrap.bg1 {top: 16px; right: 16px; width: 150px; font-size: 150px;}
+	.bg-wrap.bg2 {bottom: 80px; left: -40px; width: 120px; font-size: 120px;}
+	.bg-wrap.bg3 {bottom: -10px; right: 10%; width: 80px; font-size: 80px;}
+
+	.header-wrapper h1.title {font-size: 3em;}
 }
 
 @media (max-width: 575px) {
+	.header-wrapper h1.title {font-size: 2em;}
 	
 }
