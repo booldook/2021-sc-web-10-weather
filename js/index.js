@@ -1,6 +1,6 @@
 /* 
 kAKAO: 46ad6c8773cc6a28980b95e7eb75f88e
-
+openweathermap.com icon: http://openweathermap.org/img/wn/10d@2x.png
 */
 
 
