@@ -56,7 +56,7 @@ html, body {font-family: 'Sunflower', sans-serif; font-size: 16px; line-height: 
 .map-wrapper {width: 49%; height: 100%; border: 1px solid yellowgreen; }
 .map-wrapper #map {width: 100%; height: 100%;}
 
-.map-wrapper .co-wrapper {background-color: rgba(0,0,0,.8); color: #fff; padding: .25em; font-size: .875em;}
+.map-wrapper .co-wrapper {background-color: rgba(3, 19, 54, 0.9); color: #fff; padding: .325em; font-size: .875em; line-height: 1; letter-spacing: -0.05em; border-radius: 3px;}
 
 
 
