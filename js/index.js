@@ -69,7 +69,7 @@ $(function() {
 		r.city.forEach(function(v, i) {
 			var customOverlay = new kakao.maps.CustomOverlay({
 					position: new kakao.maps.LatLng(v.lat, v.lon),
-					content: '<div class="co-wrapper">'+v.name+'</div>',
+					content: '<div class="co-wrapper '+(v.minimap ? '' : 'minimap')+'">'+v.name+'</div>',
 					xAnchor: v.anchor ? v.anchor.x : 0.25,
 					yAnchor: v.anchor ? v.anchor.y : 0.65,
 			});
@@ -81,7 +81,14 @@ $(function() {
 		var windowHeight = $(window).innerHeight();
 		var lat = (windowHeight > 800 || windowHeight < 600) ? mapCenter.lat : mapCenter.lat + 1;
 		map.setCenter(new kakao.maps.LatLng(lat, mapCenter.lon));
-		map.setLevel(windowHeight > 800 ? 13 : 14);
+		if(windowHeight < 800) {
+			$('.minimap').hide();
+			map.setLevel(14);
+		}
+		else {
+			map.setLevel(13);
+			$('.minimap').show();
+		}
 	}
 	
 	
