@@ -56,9 +56,12 @@ html, body {font-family: 'Sunflower', sans-serif; font-size: 16px; line-height: 
 .map-wrapper {width: 49%; height: 100%; border: 1px solid yellowgreen; }
 .map-wrapper #map {width: 100%; height: 100%;}
 
-.map-wrapper .co-wrapper {background-color: rgba(3, 19, 54, 0.9); color: #fff; padding: .325em; font-size: .875em; line-height: 1; letter-spacing: -0.05em; border-radius: 3px; cursor: pointer;}
+.map-wrapper .co-wrapper {background-color: rgba(3, 19, 54, 0.9); color: #fff; padding: .325em; font-size: .875em; line-height: 1; letter-spacing: -0.05em; border-radius: 3px; cursor: pointer; position: relative;}
 .map-wrapper .co-wrapper.active {font-size: .75em;}
 .map-wrapper .co-wrapper:hover {background-color: rgba(7, 54, 3, 0.9);}
+.map-wrapper .co-wrapper .co-wrap {position: absolute; background-color: #fff; color: #000; display: none; align-items: center; padding-right: 6px; border-radius: 3px; top: 50%; right: -8px; transform: translate(100%, -50%);}
+.map-wrapper .co-wrapper .co-wrap::after {content: '◀'; display: block; position: absolute; color: #fff; left: -10px; top: calc(50% - 5px);}
+.map-wrapper .co-wrapper .co-wrap > .icon-wrap {width: 40px;}
 
 
 

@@ -22,6 +22,7 @@ $(function() {
 		i13: 'bi-cloud-snow',
 		i50: 'bi-cloud-haze',
 	}
+	var iconPath = 'http://openweathermap.org/img/wn/';
 
 	var $bgWrapper = $('.bg-wrapper');
 	var $map = $('#map');
@@ -67,9 +68,26 @@ $(function() {
 	/*************** 이벤트 콜백 *****************/
 	function onGetCity(r) {
 		r.city.forEach(function(v, i) {
+			var content = '';
+			content += '<div class="co-wrapper '+(v.minimap ? '' : 'minimap')+'">';
+			content += '<div class="co-wrap">';
+			content += '<div class="icon-wrap">';
+			content += '<img src="http://openweathermap.org/img/wn/10d@2x.png" class="w-100">';
+			content += '</div>';
+			content += '<div class="temp-wrap">';
+			content += '<div class="temp-max">';
+			content += '<span>27</span>℃';
+			content += '</div>';
+			content += '<div class="temp-min">';
+			content += '<span>23</span>℃';
+			content += '</div>';
+			content += '</div>';
+			content += '</div>';
+			content += v.name;
+			content += '</div>';
 			var customOverlay = new kakao.maps.CustomOverlay({
 					position: new kakao.maps.LatLng(v.lat, v.lon),
-					content: '<div class="co-wrapper '+(v.minimap ? '' : 'minimap')+'">'+v.name+'</div>',
+					content: content,
 					xAnchor: v.anchor ? v.anchor.x : 0.25,
 					yAnchor: v.anchor ? v.anchor.y : 0.65,
 			});
