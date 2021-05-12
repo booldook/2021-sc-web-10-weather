@@ -70,8 +70,8 @@ $(function() {
 			var customOverlay = new kakao.maps.CustomOverlay({
 					position: new kakao.maps.LatLng(v.lat, v.lon),
 					content: '<div class="co-wrapper">'+v.name+'</div>',
-					xAnchor: 0,
-					yAnchor: 0
+					xAnchor: v.anchor ? v.anchor.x : 0.25,
+					yAnchor: v.anchor ? v.anchor.y : 0.65,
 			});
 			customOverlay.setMap(map);
 		});
