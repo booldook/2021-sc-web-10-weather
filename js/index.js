@@ -122,11 +122,13 @@ $(function() {
 	}
 
 	function onOverlayEnter() {
-
+		$(this).find('.co-wrap').css('display', 'flex');
+		$(this).parent().css('z-index', 2);
 	}
-
+	
 	function onOverlayLeave() {
-
+		$(this).parent().css('z-index', 0);
+		$(this).find('.co-wrap').css('display', 'none');
 	}
 
 });
