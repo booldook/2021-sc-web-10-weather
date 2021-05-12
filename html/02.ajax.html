@@ -1,0 +1,46 @@
+<script src="../js/jquery-3.5.1.js"></script>
+<script>
+	/************** Vanilla Script(순수자바스크립트) ***************/
+	/*
+	function onLoad() {
+		console.log(this);
+		console.log(this.responseText);
+		console.log(JSON.parse(this.responseText));	// JSON문자열 -> JS Object
+	}
+
+	var xhr = new XMLHttpRequest();
+	xhr.addEventListener('load', onLoad);
+	// xhr.open('GET', '../json/city.json');
+	xhr.open('GET', 'https://api.openweathermap.org/data/2.5/weather?lat=37.563229&lon=126.989871&appid=02efdd64bdc14b279bc91d9247db4722&units=metric');
+	xhr.send();
+	*/
+
+	/************** jQuery ***************/
+	var url = 'https://api.openweathermap.org/data/2.5/weather';
+	var data = {
+		lat: 37.563229,
+		lon: 126.989871,
+		appid: '02efdd64bdc14b279bc91d9247db4722',
+		units: 'metric'
+	};
+	
+	// $.get()
+	$.get(url, data, onLoad);
+
+	// $.ajax()
+	// $.ajax(url, { type: 'GET', data: data, success: onLoad, error: onError });
+
+	function onLoad(r) {
+		console.log(r);
+		console.log(r.main);
+		console.log(r.main.temp);
+		console.log(r.weather);
+		console.log(r.weather[0]);
+		console.log(r.weather[0].icon);
+	}
+
+	function onError(xhr, status, msg) {
+		console.log(xhr, status, msg);
+	}
+
+</script>
