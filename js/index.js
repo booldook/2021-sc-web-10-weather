@@ -22,7 +22,10 @@ $(function() {
 		i13: 'bi-cloud-snow',
 		i50: 'bi-cloud-haze',
 	}
-	var iconPath = '//openweathermap.org/img/wn/';
+
+	var dailyURL = 'https://api.openweathermap.org/data/2.5/weather';
+	var weeklyURL = 'https://api.openweathermap.org/data/2.5/forecast';
+	var sendData = { appid: '02efdd64bdc14b279bc91d9247db4722', units: 'metric' };
 	var defPath = '//via.placeholder.com/40x40/c4f1f1?text=%20';
 
 	var $bgWrapper = $('.bg-wrapper');
@@ -65,13 +68,18 @@ $(function() {
 		// 도시정보 가져오기
 		$.get('../json/city.json', onGetCity);
 	}
+
+	// openweathermap의 icon 가져오기
+	function getIcon(icon) {
+		return '//openweathermap.org/img/wn/' + icon + '@2x.png';
+	}
 	
 	/*************** 이벤트 콜백 *****************/
 	function onGetCity(r) {
 		r.city.forEach(function(v, i) {
 			var content = '';
 			content += '<div class="co-wrapper '+(v.minimap ? '' : 'minimap')+'" data-lat="'+v.lat+'" data-lon="'+v.lon+'">';
-			content += '<div class="co-wrap">';
+			content += '<div class="co-wrap '+(v.name == '독도' || v.name == '울릉도' ? 'dokdo' : '')+'">';
 			content += '<div class="icon-wrap">';
 			content += '<img src="'+defPath+'" class="icon w-100">';
 			content += '</div>';
@@ -118,22 +126,16 @@ $(function() {
 	}
 
 	function onOverlayEnter() {
+		// this => .co-wrapper중 클릭당한 넘
 		$(this).find('.co-wrap').css('display', 'flex');
-		$(this).parent().css('z-index', 2);
-		var lat = $(this).data('lat');
-		var lon = $(this).data('lon');
-		$.get('https://api.openweathermap.org/data/2.5/weather', {
-			lat: lat, 
-			lon: lon, 
-			units: 'metric', 
-			appid: '02efdd64bdc14b279bc91d9247db4722'
-		}, function(r) {
-			console.log(r);
-			console.log(r.main.temp);
-			console.log(r.weather[0].icon);
+		$(this).parent().css('z-index', 1);
+		sendData.lat = $(this).data('lat');	// data-lat
+		sendData.lon = $(this).data('lon');	// data-lon
+		$.get(dailyURL, sendData, onLoad.bind(this));
+		function onLoad(r) {
 			$(this).find('.temp').text(r.main.temp);
-			$(this).find('.icon').attr('src', iconPath + r.weather[0].icon + '@2x.png');
-		}.bind(this));
+			$(this).find('.icon').attr('src', getIcon(r.weather[0].icon));
+		}
 	}
 	
 	function onOverlayLeave() {

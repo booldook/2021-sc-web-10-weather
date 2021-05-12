@@ -59,8 +59,10 @@ html, body {font-family: 'Sunflower', sans-serif; font-size: 16px; line-height: 
 .map-wrapper .co-wrapper {background-color: rgba(3, 19, 54, 0.9); color: #fff; padding: .325em; font-size: .875em; line-height: 1; letter-spacing: -0.05em; border-radius: 3px; cursor: pointer; position: relative;}
 .map-wrapper .co-wrapper.active {font-size: .75em;}
 .map-wrapper .co-wrapper:hover {background-color: rgba(9, 52, 145, 0.9);}
-.map-wrapper .co-wrapper .co-wrap {position: absolute; background-color: #c4f1f1; color: #031b47; display: none; align-items: center; padding-right: 6px; border-radius: 3px; top: 40%; right: -8px; transform: translate(100%, -50%);}
+.map-wrapper .co-wrapper .co-wrap {position: absolute; background-color: #c4f1f1; color: #031b47; display: none; align-items: center; padding-right: 6px; border-radius: 3px; top: 40%; right: -8px; transform: translate(100%, -50%); box-shadow: 0 0 10px rgba(0, 0, 0, .25);}
 .map-wrapper .co-wrapper .co-wrap::after {content: '◀'; display: block; position: absolute; color: #c4f1f1; left: -10px; top: calc(50% - 5px);}
+.map-wrapper .co-wrapper .co-wrap.dokdo {left: -8px; right: auto; transform: translate(-100%, -50%);}
+.map-wrapper .co-wrapper .co-wrap.dokdo::after {content: '▶'; left: auto; right: -10px;}
 .map-wrapper .co-wrapper .co-wrap > .icon-wrap {width: 40px;}
 
 

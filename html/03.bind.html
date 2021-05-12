@@ -11,7 +11,17 @@
 		<button class="bt-push btn btn-primary">눌러봐</button>
 	</div>
 	<script>
+		console.log(this);
+
+		// document.querySelector('.bt-push').addEventListener('click', function() { console.log(this) }.bind(this));
+		// document.querySelector('.bt-push').addEventListener('click', onClick.bind(this));
+		// function onClick() { console.log(this); }
 		
+		
+		
+		$('.bt-push').click(function() {
+			console.log(this);
+		}.bind(this));
 	</script>
 </body>
 </html>
