@@ -22,7 +22,8 @@ $(function() {
 		i13: 'bi-cloud-snow',
 		i50: 'bi-cloud-haze',
 	}
-	var iconPath = 'http://openweathermap.org/img/wn/';
+	var iconPath = '//openweathermap.org/img/wn/';
+	var defPath = '//via.placeholder.com/40x40/c4f1f1?text=%20';
 
 	var $bgWrapper = $('.bg-wrapper');
 	var $map = $('#map');
@@ -72,14 +73,14 @@ $(function() {
 			content += '<div class="co-wrapper '+(v.minimap ? '' : 'minimap')+'">';
 			content += '<div class="co-wrap">';
 			content += '<div class="icon-wrap">';
-			content += '<img src="http://openweathermap.org/img/wn/10d@2x.png" class="w-100">';
+			content += '<img src="'+defPath+'" class="w-100">';
 			content += '</div>';
 			content += '<div class="temp-wrap">';
 			content += '<div class="temp-max">';
-			content += '<span>27</span>℃';
+			content += '<span></span>℃';
 			content += '</div>';
 			content += '<div class="temp-min">';
-			content += '<span>23</span>℃';
+			content += '<span></span>℃';
 			content += '</div>';
 			content += '</div>';
 			content += '</div>';
