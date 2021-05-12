@@ -10,7 +10,7 @@ $(function() {
 	var map;	// kakao 지도 객체
 	var time;
 	var timeDivision;
-	var mapCenter = { lat: 35.80, lon: 127.55 }
+	var mapCenter = { lat: 35.80, lon: 128.7 }
 	var weatherIcon = {
 		i01: 'bi-brightness-high',
 		i02: 'bi-cloud-sun',
@@ -75,6 +75,10 @@ $(function() {
 			});
 			customOverlay.setMap(map);
 		});
+		$('.co-wrapper').mouseenter(onOverlayEnter);
+		$('.co-wrapper').mouseleave(onOverlayLeave);
+		$('.co-wrapper').click(onOverlayClick);
+		$(window).trigger('resize');
 	}
 
 	function onResize() {
@@ -83,14 +87,28 @@ $(function() {
 		map.setCenter(new kakao.maps.LatLng(lat, mapCenter.lon));
 		if(windowHeight < 800) {
 			$('.minimap').hide();
+			$('.map-wrapper .co-wrapper').addClass('active');
 			map.setLevel(14);
 		}
 		else {
 			map.setLevel(13);
 			$('.minimap').show();
+			$('.map-wrapper .co-wrapper').removeClass('active');
 		}
 	}
 	
 	
 	/*************** 이벤트 등록 *****************/
+	function onOverlayClick() {
+		
+	}
+
+	function onOverlayEnter() {
+
+	}
+
+	function onOverlayLeave() {
+
+	}
+
 });

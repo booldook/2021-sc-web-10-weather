@@ -112,14 +112,14 @@
 			"name": "세종",
 			"lat": 36.48026990646494,
 			"lon": 127.28873261152329,
-			"minimap": false,
+			"minimap": true,
 			"anchor": 0
 		},
 		{
 			"name": "충주",
 			"lat": 36.99393960749538,
 			"lon": 127.92642078484602,
-			"minimap": false,
+			"minimap": true,
 			"anchor": 0
 		},
 		{
@@ -136,7 +136,7 @@
 			"name": "대전",
 			"lat": 36.35062950136068,
 			"lon": 127.38488307104129,
-			"minimap": false,
+			"minimap": true,
 			"anchor": {
 				"x": -0.8,
 				"y": 0.325
@@ -146,14 +146,14 @@
 			"name": "서산",
 			"lat": 36.784969946926836,
 			"lon": 126.45033072687356,
-			"minimap": false,
+			"minimap": true,
 			"anchor": 0
 		},
 		{
 			"name": "보령",
 			"lat": 36.333584582160285,
 			"lon": 126.6127005826839,
-			"minimap": false,
+			"minimap": true,
 			"anchor": 0
 		},
 		{
@@ -171,7 +171,7 @@
 			"name": "전주",
 			"lat": 35.82441935695378,
 			"lon": 127.14795758267158,
-			"minimap": false,
+			"minimap": true,
 			"anchor": 0
 		},
 		{
@@ -192,14 +192,14 @@
 			"name": "광주",
 			"lat": 35.16022569263347,
 			"lon": 126.8514757979747,
-			"minimap": false,
+			"minimap": true,
 			"anchor": 0
 		},
 		{
 			"name": "목포",
 			"lat": 34.812022871814236,
 			"lon": 126.39217651148304,
-			"minimap": false,
+			"minimap": true,
 			"anchor": 0
 		},
 		{
@@ -227,7 +227,7 @@
 			"name": "고흥",
 			"lat": 34.61155404524268,
 			"lon": 127.28510432239693,
-			"minimap": false,
+			"minimap": true,
 			"anchor": 0
 		},
 		{
@@ -248,7 +248,7 @@
 			"name": "통영",
 			"lat": 34.85653423897231,
 			"lon": 128.43323131286056,
-			"minimap": false,
+			"minimap": true,
 			"anchor": {
 				"x": 0.75,
 				"y": 0.85
@@ -258,7 +258,7 @@
 			"name": "창원",
 			"lat": 35.22796935033523,
 			"lon": 128.68167261562203,
-			"minimap": false,
+			"minimap": true,
 			"anchor": 0
 		},
 		{
@@ -282,7 +282,7 @@
 			"name": "대구",
 			"lat": 35.87325218958242,
 			"lon": 128.59523130665656,
-			"minimap": false,
+			"minimap": true,
 			"anchor": 0
 		},
 		{
@@ -299,7 +299,7 @@
 			"name": "영주",
 			"lat": 36.80582942425502,
 			"lon": 128.62395999747403,
-			"minimap": false,
+			"minimap": true,
 			"anchor": 0
 		},
 		{
@@ -313,7 +313,7 @@
 			"name": "울진",
 			"lat": 36.99322082554312,
 			"lon": 129.40053245330233,
-			"minimap": false,
+			"minimap": true,
 			"anchor": 0
 		},
 		{
@@ -347,18 +347,25 @@
 			"name": "포항",
 			"lat": 36.01919184761317,
 			"lon": 129.34330519399836,
-			"minimap": false,
+			"minimap": true,
+			"anchor": 0
+		},
+		{
+			"name": "거창",
+			"lat": 35.68689653405598, 
+			"lon": 127.90957044201346,
+			"minimap": true,
 			"anchor": 0
 		},
 		{
 			"name": "울산",
 			"lat": 35.54101913459183,
 			"lon": 129.31313918878342,
-			"minimap": false,
+			"minimap": true,
 			"anchor": 0
 		},
 		{
-			"name": "거제도",
+			"name": "거제",
 			"lat": 34.8806871074464,
 			"lon": 128.6212342554565,
 			"minimap": false,
@@ -371,7 +378,7 @@
 			"name": "부산",
 			"lat": 35.17984522988927,
 			"lon": 129.0750212332489,
-			"minimap": false,
+			"minimap": true,
 			"anchor": {
 				"x": -0.35,
 				"y": 0.08
@@ -381,15 +388,21 @@
 			"name": "울릉도",
 			"lat": 37.506503003332206,
 			"lon": 130.85693898938337,
-			"minimap": false,
-			"anchor": 0
+			"minimap": true,
+			"anchor": {
+				"x": 1.35,
+				"y": 0.65
+			}
 		},
 		{
 			"name": "독도",
 			"lat": 37.241492280404415,
 			"lon": 131.865102755958,
-			"minimap": false,
-			"anchor": 0
+			"minimap": true,
+			"anchor": {
+				"x": 1,
+				"y": 0.65
+			}
 		},
 		{
 			"name": "강원도",
@@ -413,7 +426,7 @@
 			"name": "철원",
 			"lat": 38.146919566834484,
 			"lon": 127.31334956921197,
-			"minimap": false,
+			"minimap": true,
 			"anchor": 0
 		},
 		{
@@ -427,7 +440,7 @@
 			"name": "춘천",
 			"lat": 37.88146043890811,
 			"lon": 127.73009789472205,
-			"minimap": false,
+			"minimap": true,
 			"anchor": {
 				"x": 0,
 				"y": 0.25
@@ -437,14 +450,14 @@
 			"name": "속초",
 			"lat": 38.20713530682471,
 			"lon": 128.59184093984805,
-			"minimap": false,
+			"minimap": true,
 			"anchor": 0
 		},
 		{
 			"name": "강릉",
 			"lat": 37.75226262759741,
 			"lon": 128.87596168940124,
-			"minimap": false,
+			"minimap": true,
 			"anchor": 0
 		},
 		{
@@ -465,7 +478,7 @@
 			"name": "제주",
 			"lat": 33.51967371936443,
 			"lon": 126.53317218543698,
-			"minimap": false,
+			"minimap": true,
 			"anchor": 0
 		},
 		{
