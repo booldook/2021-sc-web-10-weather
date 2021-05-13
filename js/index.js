@@ -195,7 +195,10 @@ $(function () {
 
 	/*************** 이벤트 등록 *****************/
 	function onOverlayClick() {
-		console.log(this)
+		var data = JSON.parse(JSON.stringify(sendData));
+		data.lat = $(this).find('.co-wrapper').data('lat'); // data-lat
+		data.lon = $(this).find('.co-wrapper').data('lon'); // data-lon
+		$.get(dailyURL, data, onToday);
 	}
 
 	function onOverlayEnter() {
