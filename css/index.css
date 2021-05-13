@@ -74,7 +74,12 @@ html, body {font-family: 'Sunflower', sans-serif; font-size: 16px; line-height: 
 .weather-wrapper .daily-wrapper .temp-wrap .temp-feel i {font-size: .75em;}
 
 .weather-wrapper .weekly-wrapper {position: relative;}
-.weather-wrapper .weekly-wrapper .slide-stage {/* border-top: 1px solid rgba(255, 255, 255, .2); */ border: 1px solid yellowgreen; width: 90%; margin: auto;}
+.weather-wrapper .weekly-wrapper .slide-stage {border-top: 1px solid rgba(255, 255, 255, .2); width: 90%; margin: auto; padding: 1em;}
+.weather-wrapper .weekly-wrapper .slide {font-weight: lighter; font-size: .75em; text-align: center;}
+.weather-wrapper .weekly-wrapper .slide img {display: inline-block;}
+.weather-wrapper .weekly-wrapper .slide i {font-size: .875em;}
+.weather-wrapper .weekly-wrapper .slide .temp > span {font-size: 1.25em;}
+.weather-wrapper .weekly-wrapper .slide .temp-feel > span {font-size: 1.25em;}
 
 
 

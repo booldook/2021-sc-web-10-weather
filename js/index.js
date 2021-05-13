@@ -151,27 +151,19 @@ $(function () {
 		var $btPrev = $('.weather-wrapper .weekly-wrapper .bt-slide.left');
 		var $btNext = $('.weather-wrapper .weekly-wrapper .bt-slide.right');
 		var slick = {
-			autoplay: true,
+			autoplay: false,
 			autoplaySpeed: 2000,
 			infinite: true,
 			touchThreshold: 10,
 			arrows: false,
 			dots: false,
 			speed: 500,
-			slidesToShow: 5,
+			slidesToShow: 4,
 			slidesToScroll: 1,
 			responsive: [
 				{
-					breakpoint: 768,
-					settings: {
-						slidesToShow: 4
-					}
-				},
-				{
-					breakpoint: 576,
-					settings: {
-						slidesToShow: 3
-					}
+					breakpoint: 1200,
+					settings: { slidesToShow: 3 }
 				}
 			]
 		}
