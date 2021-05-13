@@ -70,6 +70,7 @@ $(function () {
 			level: 13,
 			draggable: false,
 			zoomable: false,
+			disableDoubleClickZoom: true
 		};
 		map = new kakao.maps.Map($map[0], options);
 		map.addOverlayMapTypeId(kakao.maps.MapTypeId.TERRAIN); // 지형도 붙이기
@@ -104,8 +105,8 @@ $(function () {
 	}
 
 	// openweathermap의 icon 가져오기
-	function getIcon(icon) {
-		return 'https://openweathermap.org/img/wn/' + icon + '@2x.png';
+	function getIcon(icon, notZoom) {
+		return 'https://openweathermap.org/img/wn/' + icon + (notZoom ? '.png' : '@2x.png');
 	}
 
 	/*************** 이벤트 콜백 *****************/
@@ -147,29 +148,42 @@ $(function () {
 
 	function onWeekly(r) {
 		console.log(r);
+		var html = '';
+		var $stage = $('.weather-wrapper .slide-stage');
 		var $slick = $('.weather-wrapper .slide-wrapper');
 		var $btPrev = $('.weather-wrapper .weekly-wrapper .bt-slide.left');
 		var $btNext = $('.weather-wrapper .weekly-wrapper .bt-slide.right');
 		var slick = {
-			autoplay: false,
-			autoplaySpeed: 2000,
-			infinite: true,
-			touchThreshold: 10,
+			infinite: false,
 			arrows: false,
-			dots: false,
 			speed: 500,
 			slidesToShow: 4,
-			slidesToScroll: 1,
-			responsive: [
-				{
-					breakpoint: 1200,
-					settings: { slidesToShow: 3 }
-				}
-			]
+			slidesToScroll: 4,
+			responsive: [{
+				breakpoint: 1200,
+				settings: { slidesToShow: 3 }
+			}]
 		}
-		$('.weather-wrapper .slide-wrapper').slick(slick);
+		
+		r.list.forEach(function(v) {
+			html += '<div class="slide">';
+			html += '<div class="date-wrap">'+moment(v.dt*1000).format('D일 h시')+'</div>';
+			html += '<div class="img-wrap">';
+			html += '<img src="'+getIcon(v.weather[0].icon, true)+'" alt="icon" class="mw-100">';
+			html += '</div>';
+			html += '<div class="temp-wrap">';
+			html += '<div class="temp"><span>'+v.main.temp+'</span><i><sup>o</sup>C</i></div>';
+			html += '<div class="temp-feel">체감: <span>'+v.main.feels_like+'</span><i><sup>o</sup>C</i>';
+			html += '</div>';
+			html += '</div>';
+			html += '</div>';
+		});
+		if($('.slick-list').length) $slick.slick('unslick');
+		$slick.html(html);
+		$slick.slick(slick);
 		makeSlickButton($slick, $btPrev, $btNext);
 	}
+	
 
 	function onGetCity(r) {
 		r.city.forEach(function (v, i) {
@@ -238,6 +252,7 @@ $(function () {
 		$('.co-wrapper').removeClass('click');
 		$(this).find('.co-wrapper').addClass('click');
 		$.get(dailyURL, data, onToday);
+		$.get(weeklyURL, data, onWeekly);
 	}
 
 	function onOverlayEnter() {
