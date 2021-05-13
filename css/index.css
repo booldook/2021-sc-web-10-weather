@@ -85,8 +85,9 @@ html, body {font-family: 'Sunflower', sans-serif; font-size: 16px; line-height: 
 
 .weather-wrapper .city-wrapper {position: absolute; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, .9); z-index: 99; display: none; overflow-y: auto;}
 .weather-wrapper .city-wrap {display: flex; flex-wrap: wrap; overflow-x: hidden;}
-.weather-wrapper .city {width: calc(20% + 1px); padding: .5em 0; border: 1px solid #333; text-align: center; font-size: .875em; margin-top: -1px; margin-right: -1px;}
-.weather-wrapper .city.title {width: 100%; font-size: 1.125em; border: none; padding-top: .75em;}
+.weather-wrapper .city {width: calc(20% + 1px); padding: .5em 0; border: 1px solid #333; text-align: center; font-size: .875em; margin-top: -1px; margin-right: -1px; cursor: pointer;}
+.weather-wrapper .city:not(.title):hover {background-color: rgba(183, 238, 31, 0.507);}
+.weather-wrapper .city.title {width: 100%; font-size: 1.125em; border: none; padding-top: .75em; cursor: auto;}
 
 
 /********************** Map *********************/

@@ -112,6 +112,8 @@ $(function () {
 	/*************** 이벤트 콜백 *****************/
 	function onToday(r) {
 		console.log(r);
+		var $bgWrapper = $('.bg-wrapper');
+		var $bgWrap = $bgWrapper.find('.bg-wrap');
 		var $wrapper = $('.weather-wrapper');
 		var $title = $wrapper.find('.title-wrap');
 		var $summary = $wrapper.find('.summary-wrap');
@@ -124,6 +126,11 @@ $(function () {
 		$icon.find('img').attr('src', getIcon(r.weather[0].icon));
 		$desc.find('.temp span').text(r.main.temp);
 		$desc.find('.temp-feel span').text(r.main.feels_like);
+
+		$bgWrapper.children('div').eq(0).attr('class', 'bg-wrap bg1');
+		$bgWrapper.children('div').eq(1).attr('class', 'bg-wrap bg2');
+		$bgWrapper.children('div').eq(2).attr('class', 'bg-wrap bg3');
+		$bgWrap.addClass(weatherIcon['i'+r.weather[0].icon.substring(0, r.weather[0].icon.length - 1)])
 
 		var data = cloneObject(sendData);
 		data.lat = r.coord.lat;
@@ -211,9 +218,10 @@ $(function () {
 			$(customOverlay.a).mouseleave(onOverlayLeave);
 			$(customOverlay.a).click(onOverlayClick);
 
-			var html = '<li class="city '+(v.title ? 'title' : '')+'">'+v.name+'</li>';
+			var html = '<li class="city '+(v.title ? 'title' : '')+'" data-lat="' + v.lat + '" data-lon="' + v.lon + '">'+v.name+'</li>';
 			$('.weather-wrapper .city-wrap').append(html);
 		});
+		$('.weather-wrapper .city-wrap .city').click(onCityClick);
 		$(window).trigger('resize');
 	}
 
@@ -250,6 +258,15 @@ $(function () {
 
 
 	/*************** 이벤트 등록 *****************/
+	function onCityClick() {
+		var data = cloneObject(sendData);
+		data.lat = $(this).data('lat'); // data-lat
+		data.lon = $(this).data('lon'); // data-lon
+		$('.weather-wrapper .city-wrapper').hide();
+		$.get(dailyURL, data, onToday);
+		$.get(weeklyURL, data, onWeekly);
+	}
+
 	function onOverlayClick() {
 		var data = cloneObject(sendData);
 		data.lat = $(this).find('.co-wrapper').data('lat'); // data-lat
