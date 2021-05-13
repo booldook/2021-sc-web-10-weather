@@ -1,0 +1,13 @@
+<script src="../js/jquery-3.5.1.min.js"></script>
+<script>
+$(function() {
+	$.get('../json/city.list.json', onLoaded);
+	function onLoaded(r) {
+		// var korea = r.filter(v => v.country === "KR"); // ES6
+		var korea = r.filter(function(v) {
+			return v.country === "KR"
+		});
+		console.log(JSON.stringify(korea));
+	}
+})
+</script>

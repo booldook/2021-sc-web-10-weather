@@ -198,6 +198,8 @@ $(function () {
 		var data = JSON.parse(JSON.stringify(sendData));
 		data.lat = $(this).find('.co-wrapper').data('lat'); // data-lat
 		data.lon = $(this).find('.co-wrapper').data('lon'); // data-lon
+		$('.co-wrapper').removeClass('click');
+		$(this).find('.co-wrapper').addClass('click');
 		$.get(dailyURL, data, onToday);
 	}
 
