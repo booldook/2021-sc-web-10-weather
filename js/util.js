@@ -6,6 +6,7 @@
 
 /****************** mobile check ********************/
 var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
 
 
 /****************** regExp ********************/
