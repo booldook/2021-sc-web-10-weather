@@ -28,7 +28,8 @@ $(function () {
 		i50: 'bi-cloud-haze',
 	}
 
-	var todayURL = 'https://api.openweathermap.org/data/2.5/weather';
+	var dailyURL = 'https://api.openweathermap.org/data/2.5/weather';
+	var todayURL = 'https://api.openweathermap.org/data/2.5/onecall';
 	var weeklyURL = 'https://api.openweathermap.org/data/2.5/forecast';
 	var yesterdayURL = 'https://api.openweathermap.org/data/2.5/onecall/timemachine';
 	var sendData = {
@@ -89,7 +90,7 @@ $(function () {
 			var data = JSON.parse(JSON.stringify(sendData));
 			data.lat = r.coords.latitude;
 			data.lon = r.coords.longitude;
-			$.get(todayURL, data, onToday);
+			$.get(dailyURL, data, onToday);
 			$.get(weeklyURL, data, onWeekly);
 		}
 
@@ -97,7 +98,7 @@ $(function () {
 			var data = JSON.parse(JSON.stringify(sendData));
 			data.lat = 37.563229;
 			data.lon = 126.989871;
-			$.get(todayURL, data, onToday);
+			$.get(dailyURL, data, onToday);
 			$.get(weeklyURL, data, onWeekly);
 		}
 	}
@@ -120,6 +121,8 @@ $(function () {
 		$summary.find('span').eq(0).text(r.weather[0].description);
 		$summary.find('span').eq(1).text('(' + r.weather[0].main + ')');
 		$icon.find('img').attr('src', getIcon(r.weather[0].icon));
+		$desc.find('.temp span').text(r.main.temp);
+		$desc.find('.temp-feel span').text(r.main.feels_like);
 
 		var data = JSON.parse(JSON.stringify(sendData));
 		data.lat = r.coord.lat;
@@ -202,7 +205,7 @@ $(function () {
 		var data = JSON.parse(JSON.stringify(sendData));
 		data.lat = $(this).find('.co-wrapper').data('lat'); // data-lat
 		data.lon = $(this).find('.co-wrapper').data('lon'); // data-lon
-		$.get(todayURL, data, onLoad.bind(this));
+		$.get(dailyURL, data, onLoad.bind(this));
 
 		function onLoad(r) {
 			// console.log(r);
