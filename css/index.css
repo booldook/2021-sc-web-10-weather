@@ -49,11 +49,23 @@ html, body {font-family: 'Sunflower', sans-serif; font-size: 16px; line-height: 
 
 
 /********************** Weather *********************/
-.weather-wrapper {width: 49%;}
+.weather-wrapper {width: 49%; background-color: rgba(0, 0, 0, .25); color: #fff; display: flex; align-items: center; flex-direction: column; justify-content: center; text-align: center;}
+.weather-wrapper .title-wrap {font-size: 1.5em; margin-bottom: 1em;}
+.weather-wrapper .title-wrap h3.position {font-size: .875em; font-weight: lighter;}
+.weather-wrapper .title-wrap h2.name {font-size: 1.5em; border-bottom: 2px solid #fff; margin-bottom: .25em;}
+.weather-wrapper .title-wrap h4.time {font-size: .75em; font-weight: lighter;}
+
+.weather-wrapper .summary-wrap {font-size: 2em;}
+
+.weather-wrapper .temp-wrap {font-weight: lighter;}
+.weather-wrapper .temp-wrap .temp {font-size: 1.5em;}
+.weather-wrapper .temp-wrap .temp-desc .gap {font-size: 1.25em; font-weight: normal;}
+.weather-wrapper .temp-wrap .temp span {font-weight: normal; font-size: 2em;}
+.weather-wrapper .temp-wrap .temp-gap span {font-weight: normal; font-size: 1.25em;}
 
 
 /********************** Map *********************/
-.map-wrapper {width: 49%; height: 100%; border: 1px solid yellowgreen; }
+.map-wrapper {width: 49%; height: 100%;}
 .map-wrapper #map {width: 100%; height: 100%;}
 
 .map-wrapper .co-wrapper {background-color: rgba(3, 19, 54, 0.9); color: #fff; padding: .325em; font-size: .875em; line-height: 1; letter-spacing: -0.05em; border-radius: 3px; cursor: pointer; position: relative;}

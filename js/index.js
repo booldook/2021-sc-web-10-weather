@@ -1,6 +1,8 @@
 /* 
 kAKAO: 46ad6c8773cc6a28980b95e7eb75f88e
 openweathermap.com icon: http://openweathermap.org/img/wn/10d@2x.png
+
+24시간 전 날씨정보: https://api.openweathermap.org/data/2.5/onecall?lat=37.56322905592715&lon=126.98987106691214&exclude=&appid=02efdd64bdc14b279bc91d9247db4722&units=metric&dt=1620780822
 */
 
 
@@ -133,7 +135,7 @@ $(function() {
 		sendData.lon = $(this).find('.co-wrapper').data('lon');	// data-lon
 		$.get(dailyURL, sendData, onLoad.bind(this));
 		function onLoad(r) {
-			console.log(r);
+			// console.log(r);
 			$(this).find('.temp').text(r.main.temp);
 			$(this).find('.icon').attr('src', getIcon(r.weather[0].icon));
 		}
