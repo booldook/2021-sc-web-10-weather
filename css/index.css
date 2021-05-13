@@ -42,10 +42,11 @@ html, body {font-family: 'Sunflower', sans-serif; font-size: 16px; line-height: 
 
 
 /********************** Header *********************/
-.header-wrapper {flex-grow: 0;}
-.header-wrapper h1.title {color: #fff; font-size: 4em; font-family: 'Do Hyeon', sans-serif; letter-spacing: -.075em; display: flex; justify-content: center; margin-top: 1em;}
+.header-wrapper {flex-grow: 0; position: relative;}
+.header-wrapper h1.title {color: #fff; font-size: 4em; font-family: 'Do Hyeon', sans-serif; letter-spacing: -.075em; display: flex; justify-content: center; margin-top: 1em; position: relative;}
 .header-wrapper h1.title > span {font-family: 'Noto Sans KR', sans-serif; font-size: .875em; margin-top: -.0625em; margin-right: .25em; opacity: .75;}
-.header-wrapper::after {display: block; content: ''; width: 40px; height: 3px; background-color: rgba(255, 255, 255, .5); margin: auto;}
+.header-wrapper h1.title::after {position: absolute; display: block; content: ''; width: 40px; height: 3px; background-color: rgba(255, 255, 255, .5); margin: auto; bottom: 0;}
+.header-wrapper .bt-city {position: absolute; font-size: 2em; color: #fff; right: 10px; bottom: 6px; cursor: pointer; display: none;}
 
 
 /********************** container-wrapper *********************/
@@ -53,7 +54,7 @@ html, body {font-family: 'Sunflower', sans-serif; font-size: 16px; line-height: 
 
 
 /********************** Weather *********************/
-.weather-wrapper {width: 49%; background-color: rgba(0, 0, 0, .25); color: #fff; display: flex; flex-direction: column;}
+.weather-wrapper {width: 49%; background-color: rgba(0, 0, 0, .25); color: #fff; display: flex; flex-direction: column; position: relative;}
 .weather-wrapper .daily-wrapper {display: flex; align-items: center; flex-direction: column; justify-content: center; text-align: center; flex-grow: 1;}
 .weather-wrapper .daily-wrapper .title-wrap {font-size: 1.5em; margin-bottom: 1em;}
 .weather-wrapper .daily-wrapper .title-wrap h3.position {font-size: .875em; font-weight: lighter;}
@@ -81,6 +82,11 @@ html, body {font-family: 'Sunflower', sans-serif; font-size: 16px; line-height: 
 .weather-wrapper .weekly-wrapper .slide .temp > span {font-size: 1.25em;}
 .weather-wrapper .weekly-wrapper .slide .temp-feel > span {font-size: 1.25em;}
 
+
+.weather-wrapper .city-wrapper {position: absolute; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, .9); z-index: 99; display: none; overflow-y: auto;}
+.weather-wrapper .city-wrap {display: flex; flex-wrap: wrap; overflow-x: hidden;}
+.weather-wrapper .city {width: calc(20% + 1px); padding: .5em 0; border: 1px solid #333; text-align: center; font-size: .875em; margin-top: -1px; margin-right: -1px;}
+.weather-wrapper .city.title {width: 100%; font-size: 1.125em; border: none; padding-top: .75em;}
 
 
 /********************** Map *********************/
@@ -125,6 +131,8 @@ html, body {font-family: 'Sunflower', sans-serif; font-size: 16px; line-height: 
 
 	.weather-wrapper {width: 100%;}
 	.map-wrapper {display: none;}
+
+	.header-wrapper .bt-city {display: block;}
 }
 
 @media (max-width: 575px) {
