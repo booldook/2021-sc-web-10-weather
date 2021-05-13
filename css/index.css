@@ -49,24 +49,27 @@ html, body {font-family: 'Sunflower', sans-serif; font-size: 16px; line-height: 
 
 
 /********************** Weather *********************/
-.weather-wrapper {width: 49%; background-color: rgba(0, 0, 0, .25); color: #fff; display: flex; align-items: center; flex-direction: column; justify-content: center; text-align: center;}
-.weather-wrapper .title-wrap {font-size: 1.5em; margin-bottom: 1em;}
-.weather-wrapper .title-wrap h3.position {font-size: .875em; font-weight: lighter;}
-.weather-wrapper .title-wrap h2.name {font-size: 1.5em; border-bottom: 2px solid #fff; margin-bottom: .25em;}
-.weather-wrapper .title-wrap h4.time {font-size: .75em; font-weight: lighter;}
+.weather-wrapper {width: 49%; background-color: rgba(0, 0, 0, .25); color: #fff; display: flex; flex-direction: column;}
+.weather-wrapper .daily-wrapper {display: flex; align-items: center; flex-direction: column; justify-content: center; text-align: center; flex-grow: 1;}
+.weather-wrapper .daily-wrapper .title-wrap {font-size: 1.5em; margin-bottom: 1em;}
+.weather-wrapper .daily-wrapper .title-wrap h3.position {font-size: .875em; font-weight: lighter;}
+.weather-wrapper .daily-wrapper .title-wrap h2.name {font-size: 1.5em; border-bottom: 2px solid #fff; margin-bottom: .25em;}
+.weather-wrapper .daily-wrapper .title-wrap h4.time {font-size: .75em; font-weight: lighter;}
 
-.weather-wrapper .summary-wrap {font-size: 2em;}
-.weather-wrapper .summary-wrap > :first-child {font-size: 1em;}
-.weather-wrapper .summary-wrap > :last-child {font-size: .875em;}
+.weather-wrapper .daily-wrapper .summary-wrap {font-size: 2em;}
+.weather-wrapper .daily-wrapper .summary-wrap > :first-child {font-size: 1em;}
+.weather-wrapper .daily-wrapper .summary-wrap > :last-child {font-size: .875em;}
 
-.weather-wrapper .temp-wrap {font-weight: lighter;}
-.weather-wrapper .temp-wrap i {font-style: normal; margin-left: .25em;}
-.weather-wrapper .temp-wrap .temp {font-size: 1.5em;}
-.weather-wrapper .temp-wrap .temp-desc .gap > span {font-size: 1.25em; font-weight: normal;}
-.weather-wrapper .temp-wrap .temp-desc .gap > i {font-size: .75em;}
-.weather-wrapper .temp-wrap .temp span {font-weight: normal; font-size: 2em;}
-.weather-wrapper .temp-wrap .temp-feel span {font-weight: normal; font-size: 1.25em;}
-.weather-wrapper .temp-wrap .temp-feel i {font-size: .75em;}
+.weather-wrapper .daily-wrapper .temp-wrap {font-weight: lighter;}
+.weather-wrapper .daily-wrapper .temp-wrap i {font-style: normal; margin-left: .25em;}
+.weather-wrapper .daily-wrapper .temp-wrap .temp {font-size: 1.5em;}
+.weather-wrapper .daily-wrapper .temp-wrap .temp-desc .gap > span {font-size: 1.25em; font-weight: normal;}
+.weather-wrapper .daily-wrapper .temp-wrap .temp-desc .gap > i {font-size: .75em;}
+.weather-wrapper .daily-wrapper .temp-wrap .temp span {font-weight: normal; font-size: 2em;}
+.weather-wrapper .daily-wrapper .temp-wrap .temp-feel span {font-weight: normal; font-size: 1.25em;}
+.weather-wrapper .daily-wrapper .temp-wrap .temp-feel i {font-size: .75em;}
+
+.weather-wrapper .weekly-wrapper {width: 96%; margin: auto; height: 150px; border-top: 1px solid rgba(255, 255, 255, .2);}
 
 
 /********************** Map *********************/
