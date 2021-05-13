@@ -16,6 +16,10 @@ font-family: 'Noto Sans KR', sans-serif;
 
 html, body {font-family: 'Sunflower', sans-serif; font-size: 16px; line-height: 1.25;}
 
+.bt-slide {color: rgba(255, 255, 255, .3); position: absolute; top: calc(50% - .5em); z-index: 90; font-size: 2em; cursor: pointer;}
+.bt-slide.left {left: 0;}
+.bt-slide.right {right: 0;}
+
 
 
 /********************** Wrapper *********************/
@@ -69,7 +73,9 @@ html, body {font-family: 'Sunflower', sans-serif; font-size: 16px; line-height: 
 .weather-wrapper .daily-wrapper .temp-wrap .temp-feel span {font-weight: normal; font-size: 1.25em;}
 .weather-wrapper .daily-wrapper .temp-wrap .temp-feel i {font-size: .75em;}
 
-.weather-wrapper .weekly-wrapper {width: 96%; margin: auto; height: 150px; border-top: 1px solid rgba(255, 255, 255, .2);}
+.weather-wrapper .weekly-wrapper {position: relative;}
+.weather-wrapper .weekly-wrapper .slide-stage {/* border-top: 1px solid rgba(255, 255, 255, .2); */ border: 1px solid yellowgreen; width: 90%; margin: auto;}
+
 
 
 /********************** Map *********************/

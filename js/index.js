@@ -87,7 +87,7 @@ $(function () {
 		navigator.geolocation.getCurrentPosition(onSuccess, onError, options);
 
 		function onSuccess(r) {
-			var data = JSON.parse(JSON.stringify(sendData));
+			var data = cloneObject(sendData);
 			data.lat = r.coords.latitude;
 			data.lon = r.coords.longitude;
 			$.get(dailyURL, data, onToday);
@@ -95,7 +95,7 @@ $(function () {
 		}
 
 		function onError(err) {
-			var data = JSON.parse(JSON.stringify(sendData));
+			var data = cloneObject(sendData);
 			data.lat = 37.563229;
 			data.lon = 126.989871;
 			$.get(dailyURL, data, onToday);
@@ -124,7 +124,7 @@ $(function () {
 		$desc.find('.temp span').text(r.main.temp);
 		$desc.find('.temp-feel span').text(r.main.feels_like);
 
-		var data = JSON.parse(JSON.stringify(sendData));
+		var data = cloneObject(sendData);
 		data.lat = r.coord.lat;
 		data.lon = r.coord.lon;
 		data.dt = r.dt - 86400;
@@ -147,6 +147,36 @@ $(function () {
 
 	function onWeekly(r) {
 		console.log(r);
+		var $slick = $('.weather-wrapper .slide-wrapper');
+		var $btPrev = $('.weather-wrapper .weekly-wrapper .bt-slide.left');
+		var $btNext = $('.weather-wrapper .weekly-wrapper .bt-slide.right');
+		var slick = {
+			autoplay: true,
+			autoplaySpeed: 2000,
+			infinite: true,
+			touchThreshold: 10,
+			arrows: false,
+			dots: false,
+			speed: 500,
+			slidesToShow: 5,
+			slidesToScroll: 1,
+			responsive: [
+				{
+					breakpoint: 768,
+					settings: {
+						slidesToShow: 4
+					}
+				},
+				{
+					breakpoint: 576,
+					settings: {
+						slidesToShow: 3
+					}
+				}
+			]
+		}
+		$('.weather-wrapper .slide-wrapper').slick(slick);
+		makeSlickButton($slick, $btPrev, $btNext);
 	}
 
 	function onGetCity(r) {
@@ -192,10 +222,25 @@ $(function () {
 		}
 	}
 
+	function makeSlickButton($slick, $prev, $next) {
+		$prev.click(function() { 
+			$slick.slick('slickPrev') 
+		});
+		$next.click(function() { 
+			$slick.slick('slickNext') 
+		});
+		$slick.find('.slick-dots').on('mouseenter', function() {
+			$slick.slick('slickPause');
+		});
+		$slick.find('.slick-dots').on('mouseleave', function() {
+			$slick.slick('slickPlay');
+		});
+	}
+
 
 	/*************** 이벤트 등록 *****************/
 	function onOverlayClick() {
-		var data = JSON.parse(JSON.stringify(sendData));
+		var data = cloneObject(sendData);
 		data.lat = $(this).find('.co-wrapper').data('lat'); // data-lat
 		data.lon = $(this).find('.co-wrapper').data('lon'); // data-lon
 		$('.co-wrapper').removeClass('click');
@@ -207,7 +252,7 @@ $(function () {
 		// this => .co-wrapper중 호버당한 넘 부모(kakao가 생성한 넘)
 		$(this).find('.co-wrap').css('display', 'flex');
 		$(this).css('z-index', 1);
-		var data = JSON.parse(JSON.stringify(sendData));
+		var data = cloneObject(sendData);
 		data.lat = $(this).find('.co-wrapper').data('lat'); // data-lat
 		data.lon = $(this).find('.co-wrapper').data('lon'); // data-lon
 		$.get(dailyURL, data, onLoad.bind(this));
