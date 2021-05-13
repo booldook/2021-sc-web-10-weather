@@ -27,6 +27,7 @@ $(function() {
 
 	var dailyURL = 'https://api.openweathermap.org/data/2.5/weather';
 	var weeklyURL = 'https://api.openweathermap.org/data/2.5/forecast';
+	var yesterdayURL = 'https://api.openweathermap.org/data/2.5/onecall/timemachine';
 	var sendData = { appid: '02efdd64bdc14b279bc91d9247db4722', units: 'metric' };
 	var defPath = '//via.placeholder.com/40x40/c4f1f1?text=%20';
 
@@ -38,6 +39,7 @@ $(function() {
 	/*************** 사용자 함수 *****************/
 	initBg();
 	initMap();
+	initDaily();
 
 
 	function initBg() {
@@ -69,6 +71,17 @@ $(function() {
 		
 		// 도시정보 가져오기
 		$.get('../json/city.json', onGetCity);
+	}
+
+	function initDaily() {
+		navigator.geolocation.getCurrentPosition(onSuccess, onError)
+		function onSuccess(r) {
+			console.log(r.coords.latitude);
+			console.log(r.coords.longitude);
+		}
+		function onError(err) {
+			console.log(err);
+		}
 	}
 
 	// openweathermap의 icon 가져오기
