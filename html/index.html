@@ -15,6 +15,7 @@
 	<script src="../js/jquery-3.6.0.min.js"></script>
 	<script src="../js/bootstrap.min.js"></script>
 	<script src="../js/slick.min.js"></script>
+	<script src="../js/moment.min.js"></script>
 </head>
 <body>
 	<div class="bg-wrapper">
@@ -31,19 +32,22 @@
 				<section class="weather-wrapper">
 					<div class="title-wrap">
 						<h3 class="position">현재위치</h3>
-						<h2 class="name">Seoul, KR</h2>
-						<h4 class="time">14:22분 기준</h4>
+						<h2 class="name"></h2>
+						<h4 class="time"></h4>
 					</div>
-					<div class="summary-wrap">Clear Sky</div>
+					<div class="summary-wrap">
+						<span class="desc"></span>
+						<span class="main"></span>
+					</div>
 					<div class="icon-wrap">
 						<img src="http://openweathermap.org/img/wn/10d@2x.png" alt="icon" class="mw-100">
 					</div>
 					<div class="desc-wrap">
 						<div class="temp-wrap">
 							<div class="temp-desc">
-								어제보다 
-								<span class="gap">3</span><sup>o</sup>C 
-								<span class="desc">높아요</span>
+								어제<span class="josa"></span> 
+								<span class="gap"><span></span><sup>o</sup>C</span> 
+								<span class="desc"></span>
 							</div>
 							<div class="temp"><span>24</span><sup>o</sup>C</div>
 							<div class="temp-gap">

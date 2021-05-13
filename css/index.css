@@ -56,10 +56,12 @@ html, body {font-family: 'Sunflower', sans-serif; font-size: 16px; line-height: 
 .weather-wrapper .title-wrap h4.time {font-size: .75em; font-weight: lighter;}
 
 .weather-wrapper .summary-wrap {font-size: 2em;}
+.weather-wrapper .summary-wrap > :first-child {font-size: 1em;}
+.weather-wrapper .summary-wrap > :last-child {font-size: .875em;}
 
 .weather-wrapper .temp-wrap {font-weight: lighter;}
 .weather-wrapper .temp-wrap .temp {font-size: 1.5em;}
-.weather-wrapper .temp-wrap .temp-desc .gap {font-size: 1.25em; font-weight: normal;}
+.weather-wrapper .temp-wrap .temp-desc .gap > span {font-size: 1.25em; font-weight: normal;}
 .weather-wrapper .temp-wrap .temp span {font-weight: normal; font-size: 2em;}
 .weather-wrapper .temp-wrap .temp-gap span {font-weight: normal; font-size: 1.25em;}
 
