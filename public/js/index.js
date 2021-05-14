@@ -130,7 +130,7 @@ $(function () {
 		$bgWrapper.children('div').eq(0).attr('class', 'bg-wrap bg1');
 		$bgWrapper.children('div').eq(1).attr('class', 'bg-wrap bg2');
 		$bgWrapper.children('div').eq(2).attr('class', 'bg-wrap bg3');
-		$bgWrap.addClass(weatherIcon['i'+r.weather[0].icon.substring(0, r.weather[0].icon.length - 1)])
+		$bgWrap.addClass(weatherIcon['i'+r.weather[0].icon.substring(0, r.weather[0].icon.length - 1)]);
 
 		var data = cloneObject(sendData);
 		data.lat = r.coord.lat;
