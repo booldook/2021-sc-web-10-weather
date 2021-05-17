@@ -23,7 +23,7 @@ html, body {font-family: 'Sunflower', sans-serif; font-size: 16px; line-height: 
 
 
 /********************** Wrapper *********************/
-.bg-wrapper {position: relative; width: 100%; height: 100vh; overflow: hidden;}
+.bg-wrapper {position: fixed; width: 100%; height: 100vh; overflow: hidden;}
 .bg-wrapper.active1 {background-image: linear-gradient(#0c0075, #0b1025);}
 .bg-wrapper.active2 {background-image: linear-gradient(#1f58b6, #6e3608);}
 .bg-wrapper.active3 {background-image: linear-gradient(#ffcb78, #ad4b0a);}
@@ -37,7 +37,7 @@ html, body {font-family: 'Sunflower', sans-serif; font-size: 16px; line-height: 
 .bg-wrap.bg3 {bottom: -30px; right: 30%; width: 180px; font-size: 180px;  opacity: .05;}
 
 
-.stage-wrapper {position: absolute; z-index: 1; top: 0; left: 0; width: 100%; height: 100vh;}
+.stage-wrapper {position: absolute; z-index: 1; top: 0; left: 0; width: 100%; height: 100vh; padding-bottom: 2em;}
 .wrapper {max-width: 1168px; height: 100%; margin: auto; position: relative; display: flex; flex-direction: column;}
 
 
@@ -50,7 +50,7 @@ html, body {font-family: 'Sunflower', sans-serif; font-size: 16px; line-height: 
 
 
 /********************** container-wrapper *********************/
-.container-wrapper {margin-top: 2em; margin-bottom: 2em; display: flex; justify-content: space-between; flex-grow: 1;}
+.container-wrapper {margin-top: 2em; margin-bottom: 2em; display: flex; justify-content: space-between; flex-grow: 1; align-items: stretch;}
 
 
 /********************** Weather *********************/
@@ -91,7 +91,7 @@ html, body {font-family: 'Sunflower', sans-serif; font-size: 16px; line-height: 
 
 
 /********************** Map *********************/
-.map-wrapper {width: 49%; height: 100%;}
+.map-wrapper {width: 49%;}
 .map-wrapper #map {width: 100%; height: 100%;}
 
 .map-wrapper .co-wrapper {background-color: rgba(3, 19, 54, 0.9); color: #fff; padding: .325em; font-size: .875em; line-height: 1; letter-spacing: -0.05em; border-radius: 3px; cursor: pointer; position: relative;}
