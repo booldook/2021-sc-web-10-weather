@@ -168,7 +168,7 @@ $(function () {
 			slidesToScroll: 4,
 			responsive: [{
 				breakpoint: 1200,
-				settings: { slidesToShow: 3 }
+				settings: { slidesToShow: 3, slidesToScroll: 3 }
 			}]
 		}
 		
